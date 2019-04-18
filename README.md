@@ -64,7 +64,7 @@ If you click on the **delete** button, the photo should be deleted.
 
 ### CSS
 
-Use Bootstrap or just CSS3 and elbow grease (or go out and find another CSS library: Skeleton? MaterialUI (be sure not to get)) to make it look awesome.  Any kind of awesome you want, just make it look awesome. 
+Use Bootstrap or just CSS3 and elbow grease to make it look awesome.  Any kind of awesome you want, just make it look awesome. 
 
 **Do this today, but after you get Photo crud finished**. You won't have time tomorrow, tomorrow night's tasks are more complex and will require a bit of refactoring.
 
