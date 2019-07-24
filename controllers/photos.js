@@ -19,6 +19,30 @@ router.get('/new', (req,res) => {
    
 })
 
+router.get('/:id', async (req,res) => {
+    try{ 
+        const photo = await Photo.findById(req.params.id)
+        res.render('photos/show.ejs', {
+            photo: photo
+    })
+    }catch(err){
+        console.log(err)
+        res.send(err)
+    }
+})
+
+router.get('/:id/edit', async (req,res) => {
+    try{ 
+        const photo = await Photo.findById(req.params.id)
+        res.render('photos/edit.ejs', {
+            photo: photo
+        })
+    }catch(err){
+        console.log(err)
+        res.send(err)
+    }
+})
+
 router.post('/', async (req,res) => {
     try{ 
         const newPhoto = await Photo.create(req.body)
@@ -30,19 +54,15 @@ router.post('/', async (req,res) => {
     }
 })
 
-router.get('/:id', async (req,res) => {
+
+router.put('/:id', async (req,res) => {
     try{ 
-        const photo = await Photo.findById(req.params.id)
-        res.render('photos/show.ejs', {
-            photo: photo
-        })
-        photo: photo
+        const newPhoto = await Photo.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.redirect(`photos/${req.params.id}`)
     }catch(err){
         console.log(err)
         res.send(err)
     }
 })
-
-
 
 module.exports = router
