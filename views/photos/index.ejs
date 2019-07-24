@@ -8,10 +8,10 @@
     <body>
         <h1>Photos Index Page</h1>
         <ul>
-            <%photos.forEach(function(title,index){ %>
+            <%photos.forEach(function(photo,index){ %>
             <li>
-                <a href="/photos/<%=photos._id%>"><%=photos.title%></a> 
-                <form method='POST' action='/photos/<%=photos._id%>?_method=DELETE'>
+                <a href="/photos/<%=photo._id%>"><%=photo.title%></a> 
+                <form method='POST' action='/photos/<%=photo._id%>?_method=DELETE'>
                     <input type="submit" name='' value="DELETE"/>
                 </form>
             </li>
