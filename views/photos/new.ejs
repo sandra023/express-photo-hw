@@ -16,13 +16,9 @@
     </header>
     <main>
       <form action="/photos" method="post">
-        <select name="userId">
-          <%users.forEach(function(name,index){%>
-              <option value="<%=users._id%>"><%=users.name%></option>
-          <%})%>
-        </select><br/>
+
         Title: <input type="text" name="title" /><br/>
-        URl: <input type="text" name="url" /><br/>
+        URL: <input type="text" name="url" /><br/>
         <input type="submit" value="Add Photo!"/>
       </form>
     </main>
